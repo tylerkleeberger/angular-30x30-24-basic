@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "name": "One",
+      "description": "Details for one",
+      "complete": true
+    },
+    {
+      "id": "2",
+      "name": "Two",
+      "description": "Details for two",
+      "complete": false
+    },
+    {
+      "id": "3",
+      "name": "Three",
+      "description": "Details for three",
+      "complete": true
+    },
+    {
+      "id": "4",
+      "name": "Four",
+      "description": "Details for four",
+      "complete": false
+    }
+  ],
+  "primaryItems": [
+    {
+      "name": "Alpha",
+      "description": "This is the alpha description",
+      "secondaryItems":
+        [
+          {
+            "name": "Uno",
+            "amount": "1"
+          }
+        ]
+    },
+    {
+      "name": "Beta",
+      "description": "This is the beta description",
+      "secondaryItems":
+        [
+          {
+            "name": "Dos",
+            "amount": "2"
+          }
+        ]
+    }
+  ]
+}

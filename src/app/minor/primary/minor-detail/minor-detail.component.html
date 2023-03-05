@@ -1,0 +1,34 @@
+<div>
+    <button mat-raised-button
+    color="accent"
+    [matMenuTriggerFor]="dropdown"
+    aria-label="dropdown menu">
+        Manage Primary Items
+        <mat-icon color="warn">arrow_drop_down_circle</mat-icon>
+    </button>
+    <mat-menu #dropdown="matMenu">
+        <button mat-menu-item>
+            <a style="cursor: pointer;"
+            (click)="onAddToSecondaryList()">Add to Secondary List</a>
+        </button>
+        <button mat-menu-item>
+            <a style="cursor: pointer;"
+            (click)="onEditPrimaryItem()">Edit Item</a>
+        </button>
+        <button mat-menu-item>
+            <a style="cursor: pointer;"
+            (click)="onDeletePrimaryItem()">Delete Item</a>
+        </button>
+    </mat-menu>
+</div>
+
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            Primary Items
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        
+    </mat-card-content>
+</mat-card>

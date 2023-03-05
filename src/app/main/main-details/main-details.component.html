@@ -1,0 +1,43 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            <span *ngIf="currentItem.id; else elseBlock">
+                Edit: {{originalItem | titlecase }}
+            </span>
+            <ng-template #elseBlock>Add Item</ng-template>
+        </mat-card-title>
+    </mat-card-header>
+    <form #form="ngForm" (submit)="saveItem(currentItem)">
+        <mat-card-content style="margin-top: 2%">
+            <mat-form-field class="full-width">
+                <input
+                matInput
+                placeholder="Name"
+                [(ngModel)]="currentItem.name"
+                name="name"
+                required
+                type="text">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <input
+                matInput
+                placeholder="Description"
+                [(ngModel)]="currentItem.description"
+                name="description"
+                type="text">
+            </mat-form-field>
+    
+              <section>
+                <mat-checkbox [(ngModel)]="currentItem.complete" name="complete">
+                  Complete?
+                </mat-checkbox>
+              </section>
+        </mat-card-content>
+
+        <!-- DETAIL BUTTONS -->
+        <mat-card-actions>
+            <button type="submit" [disabled]="form.invalid" mat-button color="primary">Save</button>
+            <button type="button" mat-button (click)="form.reset()">Cancel</button>
+        </mat-card-actions>
+    </form>
+</mat-card>

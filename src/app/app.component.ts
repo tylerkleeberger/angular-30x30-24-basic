@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { shareReplay } from 'rxjs';
+import { AuthService } from './login/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-30x30-24-basic';
+  title = 'Basic';
+  links = [
+    { path: '/home', icon: 'home', title: 'Home' },
+    { path: '/main', icon: 'dashboard', title: 'Main' }, 
+    { path: '/minor', icon: 'extension', title: 'Minor' },
+  ];
+
+  constructor(private authService: AuthService) {}
+
+  isAuthenticated$ = this.authService.isAuthenticated$.pipe(shareReplay(1));
+
+  logout() {
+    this.authService.logout();
+  }
 }

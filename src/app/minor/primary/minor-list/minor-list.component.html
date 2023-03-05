@@ -1,0 +1,18 @@
+<div>
+    <div>
+        <button mat-raised-button color="primary"
+        (click)="onNewPrimaryItem()">
+            New Primary Item
+            <mat-icon>fiber_new</mat-icon>
+        </button>
+    </div>
+</div>
+<hr>
+<div>
+    <div>
+        <app-minor-item
+        *ngFor="let primaryItemElement of primaryItems; let i = index"
+        [primaryItem]="primaryItemElement"
+        [index]="i"></app-minor-item>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div>
+    <app-main-start></app-main-start>
+</div>
+<div class="courses-containers">
+    <!-- MAIN LIST -->
+    <div class="courses-list">
+        <app-main-list
+        [items]="items$ | async"
+        (itemSelected)="selectItem($event)"
+        (itemDeleted)="deleteItem($event)"
+        ></app-main-list>
+    </div>
+
+    <!-- DETAIL INTERFACE -->
+    <div>
+        <app-main-details
+        [selectedItem]="selectedItem"
+        (itemSaved)="saveItem($event)"
+        (itemCancelled)="resetItem()"
+        ></app-main-details>
+    </div>
+
+</div>
